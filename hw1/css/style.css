@@ -496,7 +496,7 @@ body {
 z-index: 3;
 }
 
-.goods-item:hover .item-link {
+/* .goods-item:hover .item-link {
   background-color: #fff;
   border: 1px solid #ffb64d;
   color: #ffb64d;
@@ -506,4 +506,10 @@ z-index: 3;
   background-color: #ffb64d;
   border: 1px solid #fff;
   color: #fff;
+} */
+
+.item-link:hover {
+  background-color: #fff;
+  border: 1px solid #ffb64d;
+  color: #ffb64d;
 }
