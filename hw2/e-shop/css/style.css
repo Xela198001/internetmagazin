@@ -1,76 +1,179 @@
-body{
-    font-family: 'SF Pro Display', sans-serif;
+@font-face {
+  font-family: "kayaksans";
+  src: local("Kayak Sans Regular"), local("Kayak Sans"), url("../fonts/Kayak Sans Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
-header{
-    display: flex;
-    background-color: #2f2a2d;
-    justify-content: space-between;
-    color: #fafafa;
-    padding: 30px 80px;
+
+@font-face {
+  font-family: "kayaksans";
+  src: url("../fonts/Montserrat-Light.eot");
+  src: local("Kayak Sans Regular (Italic)"), local("Kayak Sans"), url("../fonts/Kayak Sans Regular (Italic).otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
 }
-button{
-    outline: none;
+
+@font-face {
+  font-family: "kayaksans";
+  src: url("../fonts/Montserrat-Light.eot");
+  src: local("Kayak Sans Light"), local("Kayak Sans"), url("../Kayak Sans Light.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
 }
-.logo{
-    text-transform: uppercase;
-    font-weight: bold;
+
+@font-face {
+  font-family: "kayaksans";
+  src: url("../fonts/Montserrat-Light.eot");
+  src: local("Kayak Sans Light (Italic)"), local("Kayak Sans"), url("../fonts/Kayak Sans Light (Italic).otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
 }
-.btn-cart{
-    background-color: #fafafa;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    color: #2f2a2d;
-    border-radius: 5px;
-    transition: all ease-in-out .4s;
-    cursor: pointer;
+
+@font-face {
+  font-family: "kayaksans";
+  src: url("../fonts/Montserrat-Light.eot");
+  src: local("Kayak Sans Bold"), local("Kayak Sans"), url("../fonts/Kayak Sans Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
 }
-.btn-cart:hover{
-    background-color: transparent;
-    border-color: #fafafa;
-    color: #fafafa;
+
+@font-face {
+  font-family: "kayaksans";
+  src: url("../fonts/Montserrat-Light.eot");
+  src: local("Kayak Sans Bold  (Italic)"), local("Kayak Sans"), url("../fonts/Kayak Sans Bold  (Italic).otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
 }
-.btn-cart, .logo{
-    align-self: center;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: kayaksans, Arial, Helvetica, sans-serif;
 }
-.products{
-    column-gap: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
-    grid-template-rows: 1fr;
-    padding: 40px 80px;
-    justify-content: space-between;
+
+.header {
+  width: 100%;
+  min-height: 70px;
+  background-color: #FFB64D;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: -5px 5px 10px 5px #eee;
 }
-p {
-    margin: 0 0 5px 0;
+
+.cart-button {
+  width: 200px;
+  height: 45px;
+  color: #fff;
+  background-color: #FF874D;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px 0 0;
+  transition: all ease-in-out .4s;
+  cursor: pointer;
 }
-.product-item{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 20px 0;
+
+.cart-button:hover {
+  background-color: #fff;
+  border: 1px solid #FF874D;
+  color: #FF874D;
 }
-img {
-    max-width: 100%;
-    height: auto
+
+.main {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
 }
-.desc {
-    border: 1px solid #c0c0c040;
-    padding: 15px
+
+.goods-list {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 20px;
 }
-.buy-btn{
-    margin-top: 5px;
-    background-color: #2f2a2d;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    color: #fafafa;
-    border-radius: 5px;
-    transition: all ease-in-out .4s;
-    cursor: pointer;
+
+.goods-item {
+  width: 250px;
+  min-height: 300px;
+  max-width: 550px;
+  /* border: 1px solid #ff874d; */
+  box-shadow: 0 0 1px 1px #EEEEEE;
+  margin: 5px 5px;
+  /* padding: 10px; */
+  box-sizing: border-box;
+  transition: transform ease-in-out .4s,
+  box-sizing ease-in-out .4s;
+  z-index: 2;
 }
-.buy-btn:hover{
-    background-color: transparent;
-    border-color: #2f2a2d;
-    color: #2f2a2d;
+
+.goods-item:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 10px 1px #EEEEEE;
+
+}
+
+.item-img {
+  background-size: cover;
+  overflow: hidden;
+  width: 250px;
+  height: 270px;
+}
+
+.item-title {
+  text-align: center;
+}
+
+.goods-item:hover .item-title {
+  color: #FF874D;
+}
+
+.item-text {
+  text-align: left;
+}
+
+.item-link {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffb64d;
+  border-radius: 5px;
+  font-family: kayaksans,  Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  box-sizing: border-box;
+  transition: all ease-in-out .4s;
+  z-index: 3;
+}
+
+/* .goods-item:hover .item-link {
+  background-color: #fff;
+  border: 1px solid #ffb64d;
+  color: #ffb64d;
+}
+
+.item-link:hover, item-link:visited {
+  background-color: #ffb64d;
+  border: 1px solid #fff;
+  color: #fff;
+} */
+
+.item-link:hover {
+  background-color: #fff;
+  border: 1px solid #ffb64d;
+  color: #ffb64d;
 }
